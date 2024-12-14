@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Game Tembak</h1>
+    <p class="bold">Top Score: <span id="topScorenaDiView"></span></p>
+    <p class="bold">Total Waktu: <span id="totalWaktuMain"></span></p>
+    <img id="manuk" />
+    <script>
+      var hitungan = 1;
+      var mulaiMain = "";
+      var akhirMain = "";
+      var totalWaktuMain = "";
+
+      if (localStorage.getItem("topScoreDiLocalStorage") !== null) {
+        var topScoreVariable = localStorage.getItem("topScoreDiLocalStorage");
+        document.getElementById("topScorenaDiView").innerHTML =
+          topScoreVariable + " detik";
+      }
+
+      munculkanGambar();
+      function munculkanGambar() {
+        var tiluhur = Math.random() * 400;
+        var tigigir = Math.random() * 400;
+
+        mulaiMain = new Date().getTime();
+
+        document.getElementById("manuk").src = "images/bird.png";
+        document.getElementById("manuk").style.height = 60 + "px";
+        document.getElementById("manuk").style.width = 60 + "px";
+        document.getElementById("manuk").style.top = tiluhur + "px";
+        document.getElementById("manuk").style.left = tigigir + "px";
+        document.getElementById("manuk").style.position = "relative";
+        document.getElementById("manuk").style.display = "block";
+      }
+      //Menset gambar berganti setelah di klik
+      document.getElementById("manuk").onclick = function () {
+        document.getElementById("manuk").src = "images/bom.png";
+
+        setTimeout(sumputkeunGambarna, 500);
+
+        if (hitungan < 5) {
+          setTimeout(munculkanGambar, 600);
+          hitungan++;
+        } else {
+          setTimeout(function () {
+            alert("Permainan berakhir");
+          }, 100);
+          akhirMain = new Date().getTime();
+          totalWaktuMain = (akhirMain - mulaiMain) / 1000;
+          document.getElementById("totalWaktuMain").innerHTML =
+            totalWaktuMain + " detik";
+
+          setTopscorena();
+        }
+      };
+      function sumputkeunGambarna() {
+        document.getElementById("manuk").style.display = "none";
+      }
+      //set top score
+      function setTopscorena() {
+        if (localStorage.getItem("topScoreDiLocalStorage") == null) {
+          localStorage.setItem("topScoreDiLocalStorage", totalWaktuMain);
+          document.getElementById("topScorenaDiView").innerHTML =
+            totalWaktuMain + " detik";
+        } else if (totalWaktuMain < topScoreVariable) {
+          localStorage.setItem("topScoreDiLocalStorage", totalWaktuMain);
+          document.getElementById("topScorenaDiView").innerHTML =
+            totalWaktuMain + " detik";
+        } else {
+        }
+      }
+    </script>
+  </body>
+</html>

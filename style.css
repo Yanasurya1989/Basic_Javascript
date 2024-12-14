@@ -1,0 +1,28 @@
+#blue {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #41529a;
+  float: left;
+  cursor: pointer;
+  /* pembacaan margin ini "atas bawah 0 kanan kiri 15px" */
+  margin: 0 15px;
+}
+#green {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #00a2a7;
+  float: left;
+  cursor: pointer;
+  margin: 0 15px;
+}
+#red {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #ec7577;
+  float: left;
+  cursor: pointer;
+  margin: 0 15px;
+}

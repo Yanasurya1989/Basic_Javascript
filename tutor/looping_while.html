@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="kotaview"></p>
+    <script>
+      var kota = ["Bandung", "Jakarta", "Jogja", "Bali", "Maluku"];
+      var x = 0;
+
+      while (x < kota.length) {
+        document.getElementById("kotaview").innerHTML +=
+          "saya mau ke " + kota[x] + "<br>";
+        x++;
+      }
+    </script>
+  </body>
+</html>

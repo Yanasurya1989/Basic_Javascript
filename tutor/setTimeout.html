@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 id="munculPertama"></h3>
+    <h3 id="munculKedua"></h3>
+    <h3 id="munculKetiga"></h3>
+    <script>
+      setTimeout(delayTigaDetik, 3000);
+      setTimeout(delayLimaDetik, 5000);
+      setTimeout(delayTujuhDetik, 7000);
+
+      function delayTigaDetik() {
+        document.getElementById("munculPertama").innerHTML =
+          "Tulisan ini muncul pertama setelah 3 detik";
+      }
+      function delayLimaDetik() {
+        document.getElementById("munculKedua").innerHTML =
+          "Tulisan ini muncul kedua setelah 5 detik";
+      }
+      function delayTujuhDetik() {
+        document.getElementById("munculKetiga").innerHTML =
+          "Tulisan ini muncul terakhir setelah 7 detik";
+      }
+    </script>
+  </body>
+</html>

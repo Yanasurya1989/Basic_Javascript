@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="bodyna">
+    <p>Masukan password:</p>
+    <p><input type="text" id="passwordna" /></p>
+    <button id="submitna">Submit</button>
+    <p><img src="images/1.jpeg" alt="" width="300px" id="gambarna" /></p>
+    <script>
+      document.getElementById("submitna").onclick = function () {
+        var inputan_user = document.getElementById("passwordna").value;
+        var passwordhiji = "hiji";
+        var passworddua = "dua";
+
+        if (inputan_user == passwordhiji) {
+          document.getElementById("bodyna").style.backgroundColor = "red";
+        } else if (inputan_user == passworddua) {
+          document.getElementById("gambarna").src = "images/2.jpg";
+        } else {
+          alert("salah woy...");
+        }
+      };
+    </script>
+  </body>
+</html>
